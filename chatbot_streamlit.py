@@ -94,7 +94,11 @@ def extract_text_from_youtube(youtube_url):
 
 # Chat with the Gemini API
 def chat_with_gemini(user_input, context):
-    GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY")
+    # Replace this line:
+    # GEMINI_API_KEY = st.secrets.get("GEMINI_API_KEY")
+    # With the actual API key (be careful with this approach)
+    GEMINI_API_KEY = "AIzaSyDyeb4VptLUPw-u7uopMu0Ygj0RH6-7PKE"
+
     if GEMINI_API_KEY is None:
         st.error("Please set the GEMINI_API_KEY environment variable or add it to Streamlit secrets.")
         return None
@@ -128,6 +132,8 @@ def chat_with_gemini(user_input, context):
     except requests.exceptions.RequestException as err:
         st.error(f"An Error Occurred: {err}")
     return None
+
+
 
 # Streamlit App
 def main():
